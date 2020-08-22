@@ -56,6 +56,46 @@ namespace ListasCirculares
             nodoActual.Enlace = nuevoNodo;
         }
 
+        public void AgregarInicio(string dato)
+        {
+            Nodo nuevoNodo = new Nodo();
+            nuevoNodo.Dato = dato;
+            nuevoNodo.Enlace = nodoInicial.Enlace;
+            nodoInicial.Enlace = nuevoNodo;
+        }
+
+        public Nodo Buscar(string dato)
+        {
+            if (ValidaVacia())
+            {
+                return null;
+            }
+
+            Nodo nodoBusqueda = nodoInicial;
+
+            while (nodoBusqueda.Enlace.Dato != null)
+            {
+                nodoActual = nodoBusqueda;
+                nodoBusqueda = nodoBusqueda.Enlace;
+                if(nodoBusqueda.Dato == dato)
+                {
+                    return nodoBusqueda;
+                }
+
+            }
+            return null;
+        }
+
+        public string Eliminar(string dato)
+        {
+            Nodo borrarNodo = Buscar(dato);
+            if (borrarNodo != null)
+            {
+                nodoActual.Enlace = borrarNodo.Enlace;
+                return borrarNodo.Dato;
+            }
+            return null;
+        }
 
 
     }
