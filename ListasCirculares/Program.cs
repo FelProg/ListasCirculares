@@ -6,7 +6,13 @@ namespace ListasCirculares
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //llamar a clase para funcionalidad
+            AdminListasCirculares lista = new AdminListasCirculares();
+
+            lista.AgregarNodo("segundo");
+            lista.AgregarNodo("tercero");
+            //string impresion = lista.RecorrerLista();
+            Console.WriteLine(lista.RecorrerLista());
         }
     }
 }

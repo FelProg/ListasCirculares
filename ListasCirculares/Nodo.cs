@@ -4,7 +4,16 @@ using System.Text;
 
 namespace ListasCirculares
 {
-    class Nodo
+    public class Nodo
     {
+        //pueden o no ser definidas ya que las propiedades
+        //son autoimplementadas.
+        //private string dato;
+        //private Nodo enlace;
+
+        public string Dato { get; set; }
+        public Nodo Enlace { get; set; }
+
+
     }
 }
